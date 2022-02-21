@@ -1,18 +1,28 @@
 import { visitParents } from "unist-util-visit-parents";
 import { Root } from "./Root";
-import { Child } from "./Child";
 import { isSection, Section } from "./Section";
 import { isPage, Page } from "./Page";
 
+type Breadcrumb = {
+  type: "section" | "page";
+  id: string;
+  label: string;
+};
+
 export const getBreadcrumbs = (tree: Root, id: string) => {
-  const breadcrumbs: Child[] = [];
+  const breadcrumbs: Breadcrumb[] = [];
 
   visitParents(tree, (node, ancestors) => {
     if (isPageOrSection(node) && node.id === id) {
       // Add ancestors as breadcrumbs
       ancestors.reverse().forEach((ancestor) => {
         if (isPageOrSection(ancestor)) {
-          breadcrumbs.push(ancestor);
+          const { type, id, label } = ancestor;
+          breadcrumbs.push({
+            type,
+            id,
+            label,
+          });
         }
       });
 
