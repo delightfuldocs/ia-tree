@@ -2,6 +2,7 @@
   "name": "@delightfuldocs/ia-tree",
   "type": "module",
   "source": "src/index.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -16,7 +17,7 @@
     "build": "microbundle --target node",
     "dev": "microbundle --target node watch"
   },
-  "version": "2.0.0",
+  "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
     "unist-builder": "^3.0.0",

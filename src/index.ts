@@ -4,4 +4,11 @@ export { Series, isSeries, series } from "./lib/Series";
 export { Link, isLink, link } from "./lib/Link";
 export { Page, isPage, page } from "./lib/Page";
 export { Root, isRoot, root } from "./lib/Root";
-export { Section, isSection, section } from "./lib/Section";
+export {
+  Section,
+  isSection,
+  section,
+  getSection,
+  getSectionParent,
+} from "./lib/Section";
+export { getBreadcrumbs } from "./lib/Breadcrumbs";
