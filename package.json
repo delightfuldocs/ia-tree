@@ -17,7 +17,7 @@
     "build": "microbundle --target node",
     "dev": "microbundle --target node watch"
   },
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "dependencies": {
     "unist-builder": "^3.0.0",
